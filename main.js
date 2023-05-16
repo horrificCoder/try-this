@@ -60,8 +60,8 @@ async function animate() {
             const dims = faceapi.matchDimensions(canvasRef, videoRef, true)
             const resizedResult = faceapi.resizeResults(result, dims)
 
-            let canvasWidth = 640;
-            let canvasHeight = 480;
+            let canvasWidth = 1280;
+            let canvasHeight = 720;
 
             if (resizedResult) {
                 const faceLandmarks = resizedResult[0].landmarks;
@@ -73,8 +73,8 @@ async function animate() {
                 const glassesSize = new THREE.Vector3();
                 glassesBox.getSize(glassesSize);
 
-                console.log("Sadmaosdnmas")
-                console.log(glassesBox)
+                // console.log("Sadmaosdnmas")
+                // console.log(glassesBox)
 
                 // Get the position and rotation of the face landmarks
                 const nosePos = getLandmarkCenter(faceLandmarks.getNose());
@@ -85,10 +85,10 @@ async function animate() {
 
 
 
-                console.log(
-                    "NODES"
-                );
-                console.log(rightEyePos);
+                // console.log(
+                    // "NODES"
+                // );
+                // console.log(rightEyePos);
                 // Set the position and rotation of the glasses model
                 //object[0].position.set(nosePos.x, nosePos.y, nosePos.z);
                 object[0].rotation.set(0, -faceAngle, 0);
@@ -102,12 +102,12 @@ async function animate() {
 
                 object[0].visible = true;
 
-                console.log("Scale factor:: " );
-                console.log(scaleFactor)
+                // console.log("Scale factor:: " );
+                // console.log(scaleFactor)
 
-                console.log("jdasndasjko");
+                // console.log("jdasndasjko");
 
-                console.log(object[0]);
+                // console.log(object[0]);
                 renderer.setSize(canvasWidth, canvasHeight);
 
             }
